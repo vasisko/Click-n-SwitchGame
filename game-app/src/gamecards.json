@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Card One",
+    "image": "./assets/imgs/umbrella1.png"
+  },
+  {
+    "id": 2,
+    "name": "Card Two",
+    "image": "./assets/imgs/umbrella2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Card Three",
+    "image": "./assets/imgs/umbrella3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Card Four",
+    "image": "./assets/imgs/umbrella4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Card Five",
+    "image": "link goes here"
+  },
+  {
+    "id": 6,
+    "name": "Card Six",
+    "image": "link goes here"
+  },
+  {
+    "id": 7,
+    "name": "Card Seven",
+    "image": "link goes here"
+  },
+  {
+    "id": 8,
+    "name": "Card Eight",
+    "image": "link goes here"
+  },
+  {
+    "id": 9,
+    "name": "Card None",
+    "image": "link goes here"
+  },
+  {
+    "id": 10,
+    "name": "Card Ten",
+    "image": "link goes here"
+  },
+  {
+    "id": 11,
+    "name": "Card Eleven",
+    "image": "link goes here"
+  },
+  {
+    "id": 12,
+    "name": "Card Twelve",
+    "image": "link goes here"
+  }
+]
