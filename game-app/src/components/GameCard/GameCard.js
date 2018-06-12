@@ -6,20 +6,8 @@ const GameCard = (props) => (
     <div className="img-container">
       <img alt={props.name} src={props.image} />
     </div>
-     {/* <div className="content">
-      <ul>
-        <li>
-          <strong>Name:</strong> {props.name}
-        </li>
-        <li>
-          <strong>Occupation:</strong> {props.occupation}
-        </li>
-        <li>
-          <strong>Address:</strong> {props.location}
-        </li>
-      </ul>
-    </div> */}
-    <span onClick={() => props.removeCard(props.id)} className="remove"></span>
+     
+    <span onClick={() => props.beenClicked(props.id)} className="clicked"></span>
   
    </div>
 );
