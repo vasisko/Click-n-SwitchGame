@@ -1,1 +1,1 @@
-# ClickItGame
+# Click-n-SwitchGame
