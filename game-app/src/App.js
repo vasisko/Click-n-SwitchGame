@@ -21,7 +21,7 @@ class App extends Component {
       <h1 className="title">Click a Card!</h1>
        {gamecards.map(gamecard =>
       <GameCard 
-        removeFriend={this.removeCard}
+        removeCard={this.removeCard}
         id={gamecard.id}
         key={gamecard.id}
         name={gamecard.name}

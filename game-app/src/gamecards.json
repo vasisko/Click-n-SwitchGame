@@ -22,41 +22,41 @@
   {
     "id": 5,
     "name": "Card Five",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrella5.jpg"
   },
   {
     "id": 6,
     "name": "Card Six",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrella6.jpg"
   },
   {
     "id": 7,
     "name": "Card Seven",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrellas7.jpg"
   },
   {
     "id": 8,
     "name": "Card Eight",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrellas8.jpg"
   },
   {
     "id": 9,
     "name": "Card None",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrellas9.jpg"
   },
   {
     "id": 10,
     "name": "Card Ten",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrellas10.jpg"
   },
   {
     "id": 11,
     "name": "Card Eleven",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrellas11.jpg"
   },
   {
     "id": 12,
     "name": "Card Twelve",
-    "image": "link goes here"
+    "image":  "./assets/imgs/umbrella12.jpg"
   }
 ]

@@ -19,7 +19,7 @@ const GameCard = (props) => (
         </li>
       </ul>
     </div> */}
-    <span onClick={() => props.removeCard(props.id)} className="remove">𝘅</span>
+    <span onClick={() => props.removeCard(props.id)} className="remove"></span>
   
    </div>
 );
