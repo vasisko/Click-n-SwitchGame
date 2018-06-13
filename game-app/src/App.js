@@ -28,13 +28,43 @@ class App extends Component {
 
   handleClick = id => {
     console.log(id);
-    clickCount++;
-    if (clickCount<2 ? score++ : this.gameOver());
+    if (this.gamecard.clicked.find(function(card){
+      this.gamecard.clicked++;
+    }
+    if (gamecard.clicked<2 ? score++ : this.gameOver());
    
     //const newGameCard = this.state.gamecards;
 
     this.setState({ gamecards });
   };
+
+  //Shuffle cards after onclick
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  };
+  //end of card shuffle
+  
+  gamecards = shuffle(gamecards);
+  console.log(gamecards);
+ 
+
+
+
 
   render() {
     return (
@@ -48,7 +78,7 @@ class App extends Component {
 
       {gamecards.map(gamecard =>
         <GameCard 
-          cardClick={this.handleClick}
+          clickCount={this.handleClick}
           id={gamecard.id}
           key={gamecard.id}
           name={gamecard.name}
