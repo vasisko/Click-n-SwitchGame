@@ -2,73 +2,61 @@
   {
     "id": 1,
     "name": "Card One",
-    "image": "./assets/imgs/umbrella1.png",
-    "clicked": 0
+    "image": "./assets/imgs/umbrella1.png"
   },
   {
     "id": 2,
     "name": "Card Two",
-    "image": "./assets/imgs/umbrella2.jpg",
-    "clicked": 0
+    "image": "./assets/imgs/umbrella2.jpg"
   },
   {
     "id": 3,
     "name": "Card Three",
-    "image": "./assets/imgs/umbrella3.jpg",
-    "clicked": 0
+    "image": "./assets/imgs/umbrella3.jpg"
   },
   {
     "id": 4,
     "name": "Card Four",
-    "image": "./assets/imgs/umbrella4.jpg",
-    "clicked": 0
+    "image": "./assets/imgs/umbrella4.jpg"
   },
   {
     "id": 5,
     "name": "Card Five",
-    "image":  "./assets/imgs/umbrella5.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrella5.jpg"
   },
   {
     "id": 6,
     "name": "Card Six",
-    "image":  "./assets/imgs/umbrella6.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrella6.jpg"
   },
   {
     "id": 7,
     "name": "Card Seven",
-    "image":  "./assets/imgs/umbrellas7.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrellas7.jpg"
   },
   {
     "id": 8,
     "name": "Card Eight",
-    "image":  "./assets/imgs/umbrellas8.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrellas8.jpg"
   },
   {
     "id": 9,
     "name": "Card None",
-    "image":  "./assets/imgs/umbrellas9.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrellas9.jpg"
   },
   {
     "id": 10,
     "name": "Card Ten",
-    "image":  "./assets/imgs/umbrellas10.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrellas10.jpg"
   },
   {
     "id": 11,
     "name": "Card Eleven",
-    "image":  "./assets/imgs/umbrellas11.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrellas11.jpg"
   },
   {
     "id": 12,
     "name": "Card Twelve",
-    "image":  "./assets/imgs/umbrella12.jpg",
-    "clicked": 0
+    "image":  "./assets/imgs/umbrella12.jpg"
   }
 ]

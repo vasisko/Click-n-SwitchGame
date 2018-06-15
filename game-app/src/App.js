@@ -6,14 +6,12 @@ import Scoreboard from "./components/Scoreboard";
 import gamecards from "./gamecards.json";
 import "./App.css";
 
-let score, topscore;
-let clickCount = 0;
-
 class App extends Component {
   state = {
     gamecards,
     score: 0,
-    topscore: 0
+    topscore: 0,
+    clickedCards: []
   };
 
   gameOver = () => {
@@ -25,25 +23,55 @@ class App extends Component {
     this.setState({score: 0});
     //refresh gamecards
      // foreach gamecard, set clickCount = 0
-     return true;
+     this.state.gamecards.forEach(gamecard => {
+        gamecard.clicked = 0;
+     });
   };
 
-  handleClick = id => {
-    console.log(id);
-    if (this.gamecard.clicked.find(function(card){
-      this.gamecard.clicked++;
-      //this.shuffle(gamecards);
-      })
-    );
-    if (this.gamecard.clicked<2 ? score++ : this.gameOver());
-   
-    //const newGameCard = this.state.gamecards;
-    this.setState({ gamecards });
+ 
+handleClick = id => {
+//FORGET updating gamecards.clicked --- instead make an array, store clicked cards there 
+//for every click, compare card id to array -- if matched, it is second click, game over
 
+  // check clickedCards array first to see if card has been clicked and is in array
+  if (this.state.clickedCards.indexOf(id) === -1) {
+    // add card to array
+    this.setState({clickedCards: this.state.clickedCards.concat(id)});
+    alert(this.state.clickedCards);
+    // update score
+    const updatedScore = this.state.score +1;
+    this.setState({score: updatedScore});
+  } 
+  // if card had already been clicked, 2nd click ends game ....call gameOver()
+  else { 
+   this.gameOver();
+  }
 };
+  //     
+  //     if (gamecard(i).id === id){
+  //       gamecard(i).clicked++;
+  //       //clicked just once -- good click, increment score, keep playing
+  //       if (gamecard(i).clicked <2) {
+  //         this.setState({score: this.state.score + 1});
+          
+  //       }
+  //       // clicked card for second time -- bad click, game over, reset/restart
+  //       else {this.gameOver()}; 
+       
+  //     } 
+  //     return true;
+  //     this.setState({ gamecards });
+
+  //   // Shuffle cards after each click
+  //   this.handleShuffle();
+
+  //   });
+  //};
 
   // //Shuffle cards after onclick
-  // shuffle = () => {
+
+  // //Example of array shuffle:
+  // handleShuffle = () => {
   //   var currentIndex = this.gamecards.length, temporaryValue, randomIndex;
   
   //   // While there remain elements to shuffle...
@@ -69,24 +97,55 @@ class App extends Component {
   render() {
     return (
       
-      <Wrapper>
-      <Title>Click It!</Title>
-      <Scoreboard>
-      <h2>Score: {this.state.score} </h2>;
-      <h2>Top Score: {this.state.topscore}</h2>;
-      </Scoreboard>
+    <Wrapper>
 
+      <Title>Click It!</Title>
+
+      <Scoreboard 
+        score = {this.state.score}
+        topscore = {this.state.score}
+      />
+      
       {gamecards.map(gamecard =>
         <GameCard 
-          clickCount={this.handleClick}
+          handleClick={this.handleClick}
           id={gamecard.id}
           key={gamecard.id}
           name={gamecard.name}
           image={gamecard.image}
       />)};
-
+    
     </Wrapper>)};
 
 };
 
 export default App;
+
+
+ //handleClick = id => {
+  
+    //find clicked game card in gamecards array
+    // example of 'find':  var obj = objArray.find(function (obj) { return obj.id === 3; });
+
+    // var card = this.state.gamecards.find(function (card, i) { return card.id === id; });
+    // console.log(card);
+
+    // card[i].clicked ++;
+    // if ( card[i].clicked < 2 ? this.setState({score: this.state.score + 1}) : this.gameOver() );
+    // this.setState({ gamecards });
+
+    // Shuffle cards after each click
+  //  this.handleShuffle();
+
+  //   this.state.gamecards.find((o, i) => {
+  //     if (o.id === id) {
+  //       if(gamecards[i].clicked === 0){
+  //         gamecards[i].clicked++;
+  //         this.handleShuffle();
+  //         return true; 
+  //       } else {
+  //         this.gameOver();
+  //       }
+  //     };
+  //   });
+  // };
