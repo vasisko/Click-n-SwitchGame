@@ -37,10 +37,11 @@ handleClick = id => {
   if (this.state.clickedCards.indexOf(id) === -1) {
     // add card to array
     this.setState({clickedCards: this.state.clickedCards.concat(id)});
-    alert(this.state.clickedCards);
+  
     // update score
     const updatedScore = this.state.score +1;
     this.setState({score: updatedScore});
+    this.handleShuffle();
   } 
   // if card had already been clicked, 2nd click ends game ....call gameOver()
   else { 
@@ -70,26 +71,26 @@ handleClick = id => {
 
   // //Shuffle cards after onclick
 
-  // //Example of array shuffle:
-  // handleShuffle = () => {
-  //   var currentIndex = this.gamecards.length, temporaryValue, randomIndex;
+  //Example of array shuffle:
+  handleShuffle = () => {
+    var currentIndex = this.state.gamecards.length, temporaryValue, randomIndex;
   
-  //   // While there remain elements to shuffle...
-  //   while (0 !== currentIndex) {
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
   
-  //     // Pick a remaining element...
-  //     randomIndex = Math.floor(Math.random() * currentIndex);
-  //     currentIndex -= 1;
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
   
-  //     // And swap it with the current element.
-  //     temporaryValue = this.gamecards[currentIndex];
-  //     this.gamecards[currentIndex] = this.gamecards[randomIndex];
-  //     this.gamecards[randomIndex] = temporaryValue;
-  //   }
+      // And swap it with the current element.
+      temporaryValue = this.state.gamecards[currentIndex];
+      this.state.gamecards[currentIndex] = this.state.gamecards[randomIndex];
+      this.state.gamecards[randomIndex] = temporaryValue;
+    }
   
-  //   return gamecards;
-  // };
-  // //end of card shuffle
+    return gamecards;
+  };
+  //end of card shuffle
   
   
  
