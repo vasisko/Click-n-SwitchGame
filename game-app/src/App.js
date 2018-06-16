@@ -57,12 +57,13 @@ handleShuffle = () => {
   var i = 0
     , j = 0
     , temp = null
+    , testing = this.state.gamecards
 
   for (i = this.state.gamecards.length - 1; i > 0; i -= 1) {
     j = Math.floor(Math.random() * (i + 1))
     temp = this.state.gamecards[i]
-    this.state.gamecards[i] = this.state.gamecards[j]
-    this.state.gamecards[j] = temp
+    testing[i] = this.state.gamecards[j]
+    testing[j] = temp
   }
   this.setState({ gamecards });
 };
