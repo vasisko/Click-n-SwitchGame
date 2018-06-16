@@ -5,13 +5,14 @@ const Scoreboard = props => (
 
 <div className="scoreboard">
     <div className="row">
-        <div className="col">
-            <h2>Score: {props.score} </h2>
+        <div className="col-6">
+            Score: {props.score}
         </div>
-        <div className="col">
-            <h2 >Top Score: {props.topscore}</h2>
+        <div className="col-6">
+            Top Score: {props.topscore}
         </div>
     </div>
-</div>);
+</div>
+);
 
 export default Scoreboard;

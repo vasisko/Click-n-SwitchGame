@@ -3,6 +3,7 @@ import GameCard from "./components/GameCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Scoreboard from "./components/Scoreboard";
+import HowTo from "./components/HowTo";
 import gamecards from "./gamecards.json";
 import "./App.css";
 
@@ -16,39 +17,90 @@ class App extends Component {
 
   gameOver = () => {
     //score exceeds topscore, set topscore to that value
+  
     if (this.state.score > this.state.topscore) {
         this.setState({topscore: this.state.score});
      };
     //set score to zero  
     this.setState({score: 0});
-    //refresh gamecards
-     // foreach gamecard, set clickCount = 0
-     this.state.gamecards.forEach(gamecard => {
-        gamecard.clicked = 0;
-     });
+    //refresh gamecard:
+     // clear clickCards array
+     this.setState({ clickedCards:[] });
   };
 
  
 handleClick = id => {
-//FORGET updating gamecards.clicked --- instead make an array, store clicked cards there 
+//make an array, store clicked cards there 
 //for every click, compare card id to array -- if matched, it is second click, game over
 
   // check clickedCards array first to see if card has been clicked and is in array
   if (this.state.clickedCards.indexOf(id) === -1) {
     // add card to array
     this.setState({clickedCards: this.state.clickedCards.concat(id)});
-  
-    // update score
-    const updatedScore = this.state.score +1;
-    this.setState({score: updatedScore});
-    this.handleShuffle();
+    this.handleScore();
   } 
   // if card had already been clicked, 2nd click ends game ....call gameOver()
   else { 
    this.gameOver();
   }
 };
-  //     
+handleScore = () => {
+  // update score
+  const updatedScore = this.state.score +1;
+  this.setState({score: updatedScore});
+  this.handleShuffle();
+}  
+
+//Fisher-Yates shuffle
+ 
+handleShuffle = () => {
+  var i = 0
+    , j = 0
+    , temp = null
+
+  for (i = this.state.gamecards.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = this.state.gamecards[i]
+    this.state.gamecards[i] = this.state.gamecards[j]
+    this.state.gamecards[j] = temp
+  }
+  this.setState({ gamecards });
+};
+ 
+
+  render() {
+    return (
+      
+    <Wrapper>
+
+      <Title>Click It!</Title>
+
+      <Scoreboard 
+        score = {this.state.score}
+        topscore = {this.state.topscore}
+      />
+      <HowTo>Instructions:  <br /> Click on a card.  If you have not clicked on that card yet, you will earn one point.  Every time you click on a card, the cards will switch positions. If you click on the same card twice, the game is over.
+      </HowTo>
+
+      
+      {gamecards.map(gamecard =>
+        <GameCard 
+          handleClick={this.handleClick}
+          id={gamecard.id}
+          key={gamecard.id}
+          name={gamecard.name}
+          image={gamecard.image}
+      />)};
+
+      
+    </Wrapper>)};
+
+};
+
+export default App;
+
+
+//     
   //     if (gamecard(i).id === id){
   //       gamecard(i).clicked++;
   //       //clicked just once -- good click, increment score, keep playing
@@ -70,83 +122,3 @@ handleClick = id => {
   //};
 
   // //Shuffle cards after onclick
-
-  //Example of array shuffle:
-  handleShuffle = () => {
-    var currentIndex = this.state.gamecards.length, temporaryValue, randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = this.state.gamecards[currentIndex];
-      this.state.gamecards[currentIndex] = this.state.gamecards[randomIndex];
-      this.state.gamecards[randomIndex] = temporaryValue;
-    }
-  
-    return gamecards;
-  };
-  //end of card shuffle
-  
-  
- 
-
-  render() {
-    return (
-      
-    <Wrapper>
-
-      <Title>Click It!</Title>
-
-      <Scoreboard 
-        score = {this.state.score}
-        topscore = {this.state.score}
-      />
-      
-      {gamecards.map(gamecard =>
-        <GameCard 
-          handleClick={this.handleClick}
-          id={gamecard.id}
-          key={gamecard.id}
-          name={gamecard.name}
-          image={gamecard.image}
-      />)};
-    
-    </Wrapper>)};
-
-};
-
-export default App;
-
-
- //handleClick = id => {
-  
-    //find clicked game card in gamecards array
-    // example of 'find':  var obj = objArray.find(function (obj) { return obj.id === 3; });
-
-    // var card = this.state.gamecards.find(function (card, i) { return card.id === id; });
-    // console.log(card);
-
-    // card[i].clicked ++;
-    // if ( card[i].clicked < 2 ? this.setState({score: this.state.score + 1}) : this.gameOver() );
-    // this.setState({ gamecards });
-
-    // Shuffle cards after each click
-  //  this.handleShuffle();
-
-  //   this.state.gamecards.find((o, i) => {
-  //     if (o.id === id) {
-  //       if(gamecards[i].clicked === 0){
-  //         gamecards[i].clicked++;
-  //         this.handleShuffle();
-  //         return true; 
-  //       } else {
-  //         this.gameOver();
-  //       }
-  //     };
-  //   });
-  // };
