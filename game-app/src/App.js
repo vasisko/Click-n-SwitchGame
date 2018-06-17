@@ -80,7 +80,7 @@ handleShuffle = () => {
         score = {this.state.score}
         topscore = {this.state.topscore}
       />
-      <HowTo>Instructions:  <br /> Click on a card.  If you have not clicked on that card yet, you will earn one point.  Every time you click on a card, the cards will switch positions. If you click on the same card twice, the game is over.
+      <HowTo>Instructions:  <br /> Click on a card.  If you have not clicked on that card yet, you will earn one point.  Every time you click on a card, the cards will switch positions. If you click on the same card twice, the game is over. <br />
       </HowTo>
 
       
