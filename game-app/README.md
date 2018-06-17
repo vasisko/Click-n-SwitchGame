@@ -5,12 +5,16 @@ A memory game constructed with React.  A set of 12 game cards are displayed on t
 ## Getting Started
 
 ### Prerequisites
+You will need to download Yarn for use as an NPM manager:https://yarnpkg.com/en/docs/install#windows-stable
 
 ### Installing
+Install React
+Install dependencies by running `yarn install` at the project root.
 
+* Start the app by running `yarn start` from the project root.
 
 ## Deployment
-
+To deploy the game on GitHub, follow the instructions shown here:https://dev.to/javascripterika/deploy-a-react-app-as-a-github-user-page-with-yarn-3fka
 
 
 ## Built With
