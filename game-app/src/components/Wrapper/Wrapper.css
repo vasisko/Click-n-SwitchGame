@@ -8,6 +8,7 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
+  max-width: 1200px;
   width: 80%;
   margin: auto;
 }
